@@ -18,7 +18,7 @@
         <% if can? :destroy, @hotel %>
           <%= link_to "Destroy this hotel", @hotel, data: { turbo_method: :delete, turbo_confirm: "Are you sure to delete?" }, class: 'btn btn-danger' %>
         <% end %>
-
+        <%= link_to "Show room", rooms_path, class:'btn btn-warning' %>
         <%= link_to "Back to hotels", hotels_path, class: 'btn btn-primary' %>
       </div>
     </div>

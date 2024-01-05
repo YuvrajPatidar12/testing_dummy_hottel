@@ -1,10 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<div class="col-lg-auto mx-lg-auto ">
+  <div class="card shadow ">
+    <div class="card-header text-center mb-3">
+      <h1><strong>Room details</strong></h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-auto g-4 mb-5 p-3  ">
+      <div class="col">
+        <div class="card h-100 " style="background-color: lightblue;">  
+          <div class="card-body">
+            <h5 class="card-title"><strong>Room number: </strong><%= @room.room_number %></h5>
+            <h6 class="card-title"><strong>Hotel name: </strong><%= @room.hotel.name %></h6>
+            <p class="card-text"><strong>Room Type: </strong><%= @room.room_type.name %></p>
+            <p class="card-text"><strong>Room Description: </strong><%= @room.room_type.description %></p>
+            <p class="card-text"><strong>Room Capacity: </strong><%= @room.room_type.capacity %></p>
+            <p class="card-text"><strong>Room price: </strong><%= @room.room_type.price %></p>
+            <p class="card-text"><strong>Room Status: </strong><%= @room.status %></p>
 
-<%= render @room %>
-
-<div>
-  <%= link_to "Edit this room", edit_room_path(@room) %> |
-  <%= link_to "Back to rooms", rooms_path %>
-
-  <%= button_to "Destroy this room", @room, method: :delete %>
+            <%= link_to "Edit this room", edit_room_path(@room),class:'btn btn-primary' %>
+            <%= link_to "Back to rooms", rooms_path, class:'btn btn-primary' %>
+            <%=  link_to "Destroy this room", @room, data:{ turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class:'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

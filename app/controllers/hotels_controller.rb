@@ -5,12 +5,7 @@ class HotelsController < ApplicationController
 
   # GET /hotels or /hotels.json
   def index
-    
-    if current_user.admin? || current_user.manager?
       @hotels = Hotel.all
-    else
-      @hotels = current_user.hotels
-    end
   end
 
   # GET /hotels/1 or /hotels/1.json

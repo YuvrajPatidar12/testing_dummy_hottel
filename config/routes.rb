@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'home#contact'
   post 'contact', to: 'home#process_contact', as: 'process_contact'
   resources :hotels
+  
 
   namespace :admin do
     resources :dashboard, only: [:index]

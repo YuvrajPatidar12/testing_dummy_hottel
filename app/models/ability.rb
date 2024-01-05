@@ -19,7 +19,7 @@ class Ability
 
       # Add other manager-specific abilities as needed
     elsif user.customer?
-      can :read, Hotel
+      can :read, Hotel  
       # can :read, Room
       # can :create, Booking
       # can :read, Booking, user_id: user.id

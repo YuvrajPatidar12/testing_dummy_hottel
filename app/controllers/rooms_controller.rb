@@ -3,11 +3,20 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
+    # if current_user.admin?
+    #   @rooms = Room.all
+    # elsif current_user.manager?
+    #   @rooms = current_user.hotels.rooms
+    # else
+    #   @rooms = current_user.hotels.rooms
+    # end
     @rooms = Room.all
   end
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    @hotel = Hotel.find(params[:id])
+    @rooms = @hotel.rooms.all
   end
 
   # GET /rooms/new
@@ -65,6 +74,7 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
+      params[:room][:hotel_id] = 2
       params.require(:room).permit(:room_number, :status, :hotel_id, :room_type_id)
     end
 end
