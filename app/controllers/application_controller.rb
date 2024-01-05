@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  
   def after_sign_in_path_for(resource)
     # Check the role of the signed-in user and redirect accordingly
     if resource.is_a?(User) && resource.role == 'admin'
