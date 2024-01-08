@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :rooms
-  resources :room_types
-  resources :services
-
+  
+  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -17,7 +15,11 @@ Rails.application.routes.draw do
   get 'home_service', to: 'home#home_service'
   get 'contact', to: 'home#contact'
   post 'contact', to: 'home#process_contact', as: 'process_contact'
-  resources :hotels
+  resources :hotels do 
+    resources :rooms
+    resources :services
+  end
+  resources :room_types
   
 
   namespace :admin do
