@@ -89,6 +89,11 @@
           <%= form.label :description, class:'form-label' %>
           <%= form.text_area :description, class:'form-control' %>
         </div>
+        
+        <div class="col-md-12">
+          <%= form.label :hotel_pictures, class: 'form-label' %>
+          <%= form.file_field :hotel_pictures, multiple: true, class: 'form-control' %>
+        </div>
 
         <div class="col-md-12">
           <%= form.submit "Add Hotel", class:'btn btn-primary' %>

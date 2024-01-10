@@ -31,7 +31,10 @@
           <%= form.label :room_type_id, 'Select Room type', class: 'form-label'  %>
           <%= form.collection_select :room_type_id, RoomType.all, :id, :name, {}, class:'form-select' %>
         </div>
-
+        <div class="col-12 mb-2">
+          <%= form.label :room_pictures, class: 'form-label' %>
+          <%= form.file_field :room_pictures, multiple: true, class: 'form-control' %>
+        </div>
         <div class="col-12">
           <%= form.submit class:'btn btn-primary' %>
         </div>
