@@ -1,5 +1,5 @@
-<main class="main users chart-page" id="skip-target">
-      <div class="container">
+<%# <main class="main users chart-page" id="skip-target"> %>
+      <%# <div class="container"> %>
         <h1>Hello, <%= current_user.name %></h1>
         <h2 class="main-title">Dashboard</h2>
         <% if current_user.admin? || current_user.manager? %>  
@@ -145,5 +145,5 @@
 
         <% end %>      
         
-      </div>
-</main>
+      <%# </div> %>
+<%# </main> %>

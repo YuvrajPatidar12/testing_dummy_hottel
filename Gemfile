@@ -77,3 +77,5 @@ gem "font-awesome-sass", "~> 6.5.1"
 
 gem 'cancancan'
 
+
+gem "byebug", "~> 11.1"

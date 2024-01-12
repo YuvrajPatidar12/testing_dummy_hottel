@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -15,15 +14,19 @@ Rails.application.routes.draw do
   get 'home_service', to: 'home#home_service'
   get 'contact', to: 'home#contact'
   post 'contact', to: 'home#process_contact', as: 'process_contact'
+  get 'display_booking', to: 'bookings#display_booking', as: 'display_booking'
   resources :hotels do 
-    resources :rooms
     resources :services
+    resources :rooms do
+      resources :bookings
+    end
   end
   resources :room_types
   
 
   namespace :admin do
     resources :dashboard, only: [:index]
+    # get 'dashboard/display_all_booking', to: "dashboard#display_all_booking"
   end
   namespace :manager do
     resources :dashboard, only: [:index]
